@@ -17,6 +17,7 @@ import states.TitleState;
         // end of Mobile Controls Releated
 	public var popUpRating:Bool = true;
 	public var downScroll:Bool = false;
+	public var combogamehud:Bool = true;
 	public var middleScroll:Bool = false;
 	public var opponentStrums:Bool = true;
 	public var showFPS:Bool = true;
