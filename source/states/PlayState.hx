@@ -578,7 +578,14 @@ class PlayState extends MusicBeatState
 
 		uiGroup.cameras = [camHUD];
 		noteGroup.cameras = [camHUD];
+		if(!ClientPrefs.data.combogamehud)
+		{
 		comboGroup.cameras = [camHUD];
+		}
+		if(ClientPrefs.data.combogamehud)
+		{
+		comboGroup.cameras = [camGame];
+		}
 
 		startingSong = true;
 
@@ -1128,8 +1135,8 @@ class PlayState extends MusicBeatState
 		}
 
 		var tempScore:String = 'Score: ${songScore}'
-		+ (!instakillOnMiss ? ' | Misses: ${songMisses}' : "")
-		+ ' | Rating: ${str}';
+		+ (!instakillOnMiss ? ' | Combo Breaks: ${songMisses}' : "")
+		+ ' | Accuracy: ${str}';
 		// "tempScore" variable is used to prevent another memory leak, just in case
 		// "\n" here prevents the text from being cut off by beat zooms
 		scoreTxt.text = '${tempScore}\n';
